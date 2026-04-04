@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Coffee Theme Colors */
+  --coffee-dark: #2C1810;
+  --coffee-medium: #4A2C2A;
+  --coffee-brown: #6F4E37;
+  --coffee-light: #A67B5B;
+  --cream: #F5F0E8;
+  --cream-dark: #E8DFD4;
+  --espresso: #1A0F0A;
+  --caramel: #C4A35A;
+  --mocha: #3B2314;
+  --success: #2E7D32;
+  
+  /* Semantic Colors */
+  --text: #5D4E37;
+  --text-h: #2C1810;
+  --bg: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --border: #E0D5C7;
+  --accent: #6F4E37;
+  --accent-hover: #8B6B4E;
+  --accent-light: rgba(111, 78, 55, 0.1);
+  --shadow: 0 4px 20px rgba(44, 24, 16, 0.1);
+  --shadow-hover: 0 8px 30px rgba(44, 24, 16, 0.15);
+
+  /* Fonts */
+  --heading: 'Playfair Display', Georgia, serif;
+  --sans: 'Poppins', system-ui, sans-serif;
+
+  font: 14px/1.6 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--bg) 100%);
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  min-height: 100vh;
+}
+
+/* ============ MOBILE FIRST NAVBAR ============ */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  background: transparent;
+}
+
+.nav .logo {
+  text-decoration: none;
+}
+
+.nav .logo h3 {
+  font-family: var(--heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--coffee-dark);
+  letter-spacing: 1px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.nav .logo:hover h3 {
+  color: var(--coffee-brown);
+}
+
+.nav .logo h3::before {
+  content: '☕ ';
+}
+
+.nav .cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--coffee-brown);
+  color: var(--cream);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.nav .cart:hover {
+  background: var(--coffee-medium);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.nav .cart span {
+  background: var(--caramel);
+  color: var(--coffee-dark);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ============ MOBILE FIRST MENU ============ */
+.menu-page {
+  padding-bottom: 30px;
+}
+
+.menu-header {
+  text-align: center;
+  padding: 16px 0 24px;
+}
+
+.menu-header h1 {
+  font-family: var(--heading);
+  font-size: 1.8rem;
+  color: var(--coffee-dark);
+  margin: 0 0 8px;
+}
+
+.menu-header p {
+  color: var(--text);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0;
+}
+
+/* ============ MOBILE FIRST DRINK CARD ============ */
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
+}
+
+.card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-family: var(--heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--coffee-dark);
+  margin: 0 0 6px;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0 0 10px;
+  flex-grow: 1;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--coffee-light);
+  margin: 0 0 12px;
+}
+
+.card button {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--coffee-brown) 0%, var(--coffee-medium) 100%);
+  color: var(--cream);
+  border: none;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card button:hover {
+  background: linear-gradient(135deg, var(--coffee-medium) 0%, var(--espresso) 100%);
+}
+
+.card button:active {
+  transform: scale(0.95);
+}
+
+/* Button Added State */
+.card button.added {
+  background: linear-gradient(135deg, var(--success) 0%, #1B5E20 100%);
+  animation: pulse 0.3s ease-out;
+}
+
+.card button:disabled {
+  cursor: default;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Typography */
+h1, h2 {
+  font-family: var(--heading);
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* ============ TABLET STYLES (600px+) ============ */
+@media (min-width: 600px) {
+  :root {
+    font-size: 15px;
+  }
+  
+  #root {
+    padding: 0 20px;
+  }
+  
+  .nav {
+    padding: 18px 0;
+    margin-bottom: 32px;
+  }
+  
+  .nav .logo h3 {
+    font-size: 1.75rem;
+  }
+  
+  .nav .cart {
+    padding: 11px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .menu-header {
+    padding: 20px 0 32px;
+  }
+  
+  .menu-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .card-image {
+    height: 200px;
+  }
+  
+  .card-content {
+    padding: 18px;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ============ DESKTOP STYLES (900px+) ============ */
+@media (min-width: 900px) {
+  :root {
+    font-size: 16px;
+  }
+  
+  .nav {
+    padding: 20px 0;
+    margin-bottom: 40px;
+  }
+  
+  .nav .logo h3 {
+    font-size: 2rem;
+  }
+  
+  .nav .cart {
+    padding: 12px 24px;
+    gap: 8px;
+  }
+  
+  .nav .cart span {
+    padding: 2px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .menu-header {
+    padding: 20px 0 40px;
+  }
+  
+  .menu-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+  }
+  
+  .menu-header p {
+    font-size: 1.1rem;
+  }
+  
+  .menu {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .menu-page {
+    padding-bottom: 40px;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .card:active {
+    transform: translateY(-4px);
+  }
+  
+  .card-image {
+    height: 200px;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.4rem;
+    margin: 0 0 8px;
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+    margin: 0 0 12px;
+  }
+  
+  .card-price {
+    font-size: 1.2rem;
+    margin: 0 0 16px;
+  }
+  
+  .card button {
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+  
+  .card button:hover {
+    transform: scale(1.02);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============ LARGE DESKTOP (1200px+) ============ */
+@media (min-width: 1200px) {
+  .menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
