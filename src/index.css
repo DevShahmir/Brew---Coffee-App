@@ -158,6 +158,38 @@ body {
   flex-direction: column;
 }
 
+.card-image-link {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-image-link:focus-visible {
+  outline: 2px solid var(--coffee-brown);
+  outline-offset: 2px;
+}
+
+.card-title-link {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-title-link:focus-visible .card-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card-title-link .card-title {
+  transition: color 0.2s ease;
+}
+
+.card-title-link:hover .card-title {
+  color: var(--coffee-brown);
+}
+
 .card:active {
   transform: scale(0.98);
 }
