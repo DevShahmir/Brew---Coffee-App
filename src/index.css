@@ -116,6 +116,65 @@ body {
   font-weight: 600;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-login {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--coffee-brown);
+  text-decoration: none;
+  border-radius: 50px;
+  border: 2px solid var(--coffee-brown);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-login:hover {
+  background: var(--accent-light);
+  color: var(--coffee-dark);
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(200px, 46vw);
+}
+
+.nav-user__greet {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--coffee-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-user__logout {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--coffee-medium);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-user__logout:hover {
+  background: var(--accent-light);
+  color: var(--coffee-dark);
+}
+
 /* ============ MOBILE FIRST MENU ============ */
 .menu-page {
   padding-bottom: 30px;
